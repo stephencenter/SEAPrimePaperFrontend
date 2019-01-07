@@ -1,0 +1,93 @@
+.example-fill-remaining-space {
+    flex: 1 1 auto;
+}
+
+.logoText{
+    font-size: 1.5em;
+
+}
+
+.mat-toolbar{
+    background: #DCDCDC;
+}
+
+
+
+.btn-1{
+  background-color: transparent;
+  width: 7%;
+  height: 55%;
+  border:2px solid #41883F;
+  text-align:center;
+  cursor:pointer;
+  position:relative;
+  box-sizing:border-box;
+  overflow:hidden;
+  margin:0 0 0 0;
+  }
+
+  .btn-1 span{
+    font-family:arial;
+    font-size:16px;
+    color:#41883F;
+    text-decoration:none;
+    line-height:40%;
+    transition:all .5s ease;
+    z-index:2;
+    position:relative;
+  }
+  .eff{
+    width:140px;
+    height:50px;
+    left:-140px;
+    top:-50px;
+    background:#41883F;
+    position:absolute;
+    transition:all .5s ease;
+    z-index:2;
+  }
+  .btn-1:hover .eff{
+    left:0;top:0;
+  }
+  .btn-1:hover span{
+    color:#DCDCDC;
+  }
+
+  .btn-alt{
+    background-color: transparent;
+    width: 7%;
+    height: 55%;
+    border:2px solid #41883F;
+    text-align:center;
+    cursor:pointer;
+    position:relative;
+    box-sizing:border-box;
+    overflow:hidden;
+    margin:0 0 0 0;
+  }
+  .btn-alt span{
+    font-family:arial;
+    font-size:16px;
+    color:#41883F;
+    text-decoration:none;
+    line-height:40%;
+    transition:all .5s ease;
+    z-index:2;
+    position:relative;
+  }
+  .eff-alt{
+    width:140px;
+    height:50px;
+    right:-140px;
+    bottom:-50px;
+    background:#41883F;
+    position:absolute;
+    transition:all .5s ease;
+    z-index:2;
+  }
+  .btn-alt:hover .eff-alt{
+    right:0;bottom:0;
+  }
+  .btn-alt:hover span{
+    color:#fff;
+  }
