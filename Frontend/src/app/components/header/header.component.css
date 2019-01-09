@@ -2,20 +2,23 @@
     flex: 1 1 auto;
 }
 
-.logoText{
-    font-size: 1.5em;
-
-}
-
 .mat-toolbar{
-    background: #DCDCDC;
+  background-image: linear-gradient(#fff, #DCDCDC);}
+
+#logoText{
+  color: #002080;
+  font-family: 'Contrail One', cursive;
+  font-size: 160%;
 }
 
+#logoText:hover{
+  color: #41883F;
 
+}
 
 .btn-1{
   background-color: transparent;
-  width: 7%;
+  width: 9%;
   height: 55%;
   border:2px solid #41883F;
   text-align:center;
@@ -27,8 +30,8 @@
   }
 
   .btn-1 span{
-    font-family:arial;
-    font-size:16px;
+    font-family: 'Contrail One', cursive;
+    font-size:18px;
     color:#41883F;
     text-decoration:none;
     line-height:40%;
@@ -50,12 +53,12 @@
     left:0;top:0;
   }
   .btn-1:hover span{
-    color:#DCDCDC;
+    color:#fff;
   }
 
   .btn-alt{
     background-color: transparent;
-    width: 7%;
+    width: 9%;
     height: 55%;
     border:2px solid #41883F;
     text-align:center;
@@ -66,8 +69,8 @@
     margin:0 0 0 0;
   }
   .btn-alt span{
-    font-family:arial;
-    font-size:16px;
+    font-family: 'Contrail One', cursive;
+    font-size:18px;
     color:#41883F;
     text-decoration:none;
     line-height:40%;

@@ -1,0 +1,38 @@
+<div class="head">
+  &nbsp;
+  <h1>Welcome!</h1>
+  <h3>Create a New Account</h3>
+</div>
+<hr>
+
+<form (ngSubmit)="onSubmit()" [formGroup]="_registerForm">
+  <div class="formContainer">
+      <div>
+        <mat-form-field color="primary">
+        <input matInput placeholder="Email" formControlName="email" type="email"  required>
+      </mat-form-field> 
+    </div>
+    &nbsp;
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" type="password" required>
+      </mat-form-field>
+    </div>
+    &nbsp;
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Confirm Password" formControlName="confirmPassword" type="password" required>
+      </mat-form-field>
+    </div>
+    &nbsp;
+  </div>
+  
+  <button class="btn-1" type="submit">
+      <div class="eff"></div>
+      <span>Sign Up</span>
+    </button>
+  <p>Already have an Account?<button class="incogBtn" routerLink="/login">Login</button></p>
+
+</form>
+
+
