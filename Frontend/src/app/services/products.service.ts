@@ -12,11 +12,11 @@ export class ProductsService {
   constructor(private _http: HttpClient) { }
 
   getProducts() {
-    return this._http.get(`${ApiUrl}/Products`, { headers: this.getHeaders() });
+    return this._http.get(`${ApiUrl}/Product`, { headers: this.getHeaders() });
   }
 
   createProduct(product: Product) {
-    return this._http.post(`${ApiUrl}/Products`, product, {headers: this.getHeaders()});
+    return this._http.post(`${ApiUrl}/Product`, product, {headers: this.getHeaders()});
   }
 
   private getHeaders() {

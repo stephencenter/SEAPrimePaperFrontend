@@ -15,8 +15,9 @@ export class ProductIndexComponent implements OnInit {
   constructor(private _productService: ProductsService) { }
 
   ngOnInit() {
-    this._productService.getProducts().subscribe((products: Product[]) => {
-      this.dataSource = new MatTableDataSource<Product>(products);
+    this._productService.getProducts().subscribe((response: any) => {
+      console.log(response)
+      this.dataSource = new MatTableDataSource<Product>(response);
     });
   }
 
