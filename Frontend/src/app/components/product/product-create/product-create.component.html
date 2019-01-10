@@ -1,0 +1,23 @@
+<h1>Create a Product.</h1>
+<hr>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="productForm">
+  <div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="ProductName" formControlName="ProductName" type="ProductName" required/>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Description" formControlName="Description" type="Description" required/>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Price" formControlName="Price" type="Price" required/>
+      </mat-form-field>
+    </div>
+  </div>
+  <button mat-raised-button class="nav-btn" color="primary" type="submit">Create Product</button>
+</form>
+
+<a mat-button routerLink="/products">Back to List</a>
