@@ -1,0 +1,29 @@
+<div class="head">
+  &nbsp;
+<h1>Welcome Back!</h1>
+<h3>Please Sign in to your Account.</h3>
+<hr>
+</div>
+
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="_loginForm">
+  <div class="container">
+      <div>
+          <mat-form-field>
+        <input matInput placeholder="Username" formControlName="userName" type="username"  required>
+      </mat-form-field> 
+    </div>
+    &nbsp;
+    <div>
+      <mat-form-field>
+        <input matInput placeholder="Password" formControlName="password" type="password" required>
+      </mat-form-field>
+    </div>
+    &nbsp;
+  </div>
+  <button class="btn-1" type="submit">
+      <div class="eff"></div>
+      <span>Login</span>
+    </button>
+  <p>Don't have an Account?<button class="incogBtn" routerLink="/register">Register</button></p>
+
+</form>

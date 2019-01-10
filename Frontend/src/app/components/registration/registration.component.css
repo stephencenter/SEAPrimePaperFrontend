@@ -1,0 +1,60 @@
+.head {
+  font-family: 'Contrail One', cursive;
+  color: #002080;
+}
+
+.formContainer{
+  width: 100%;
+}
+
+.btn-1{
+    background-color: transparent;
+    width: 9%;
+    height: 55%;
+    border:2px solid #41883F;
+    text-align:center;
+    cursor:pointer;
+    position:relative;
+    box-sizing:border-box;
+    overflow:hidden;
+    margin:0 0 0 0;
+    }
+  
+    .btn-1 span{
+      font-family: 'Contrail One', cursive;
+      font-size:16px;
+      color:#41883F;
+      text-decoration:none;
+      line-height:40%;
+      transition:all .5s ease;
+      z-index:2;
+      position:relative;
+    }
+    .eff{
+      width:140px;
+      height:50px;
+      left:-140px;
+      top:-50px;
+      background:#41883F;
+      position:absolute;
+      transition:all .5s ease;
+      z-index:2;
+    }
+    .btn-1:hover .eff{
+      left:0;top:0;
+    }
+    .btn-1:hover span{
+      color:#fff;
+    }
+
+
+.incogBtn{
+  border: none;
+  background: transparent;
+  color: blue;
+  cursor:pointer;
+}
+.incogBtn:focus {
+  outline: none;
+}
+  
