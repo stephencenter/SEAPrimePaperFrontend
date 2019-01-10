@@ -21,9 +21,6 @@ import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
 import { ProductsService } from './services/products.service';
 import { ProductIndexComponent } from './components/product/product-index/product-index.component';
-
-import { ProductsService } from './services/products.service';
-import { ProductIndexComponent } from './components/product/product-index/product-index.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 
 
