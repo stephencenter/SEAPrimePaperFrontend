@@ -9,6 +9,7 @@ import {
   MatToolbarModule,
   MatFormFieldModule,
   MatInputModule,
+  MatTableModule
 
 } from '@angular/material';
 
@@ -19,11 +20,14 @@ import { RegistrationComponent } from './components/registration/registration.co
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { LoginComponent } from './components/login/login.component';
 import { AuthService } from './services/auth.service';
+import { ProductsService } from './services/products.service';
+import { ProductIndexComponent } from './components/product/product-index/product-index.component';
 
 
 const routes =[
   {path: 'register', component: RegistrationComponent },
-  {path: 'login', component: LoginComponent}
+  {path: 'login', component: LoginComponent},
+  {path: 'products', component: ProductIndexComponent }
 ];
 
 @NgModule({
@@ -31,7 +35,8 @@ const routes =[
     AppComponent,
     HeaderComponent,
     RegistrationComponent,
-    LoginComponent
+    LoginComponent,
+    ProductIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -41,12 +46,14 @@ const routes =[
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     FormsModule,
     ReactiveFormsModule,
 
   ],
   providers: [
-    AuthService
+    AuthService,
+    ProductsService
   ],
   bootstrap: [AppComponent]
 })
