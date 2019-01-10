@@ -5,11 +5,11 @@
 <hr>
 </div>
 
-<form (ngSubmit)="onSubmit()" [formGroup]="_loginForm">
+<form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="_loginForm">
   <div class="container">
       <div>
           <mat-form-field>
-        <input matInput placeholder="Email" formControlName="email" type="email"  required>
+        <input matInput placeholder="Username" formControlName="userName" type="username"  required>
       </mat-form-field> 
     </div>
     &nbsp;
@@ -24,6 +24,6 @@
       <div class="eff"></div>
       <span>Login</span>
     </button>
-  <p>Dont have an Account?<button class="incogBtn" routerLink="/register">Register</button></p>
+  <p>Don't have an Account?<button class="incogBtn" routerLink="/register">Register</button></p>
 
 </form>

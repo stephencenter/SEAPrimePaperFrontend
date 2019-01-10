@@ -3,6 +3,9 @@
   color: #002080;
 }
 
+.formContainer{
+  width: 100%;
+}
 
 .btn-1{
     background-color: transparent;
