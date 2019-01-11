@@ -1,18 +1,25 @@
 <h1>Products</h1>
 <button mat-raised-button color="primary" routerLink="/products/create">Create New Product</button>
-<hr> 
+<hr>
 
 <div>
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
-    
+
     <ng-container matColumnDef="details">
       <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
       <mat-cell *matCellDef="let product" routerLink="/products/details/{{product.productEntityId}}">
         <i class="material-icons">
           library_books
-          </i>
+        </i>
+      </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="edit">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let product" routerLink="/products/edit/{{product.productEntityId}}">
+        <i class="material-icons">edit</i>
       </mat-cell>
     </ng-container>
 
@@ -22,15 +29,15 @@
     </ng-container>
 
     <ng-container matColumnDef="Description">
-        <mat-header-cell *matHeaderCellDef> Description</mat-header-cell>
-        <mat-cell *matCellDef="let product">{{product.description}}</mat-cell>
+      <mat-header-cell *matHeaderCellDef> Description</mat-header-cell>
+      <mat-cell *matCellDef="let product">{{product.description}}</mat-cell>
     </ng-container>
-    
-    <ng-container matColumnDef="Price">
-        <mat-header-cell *matHeaderCellDef> Price</mat-header-cell>
-        <mat-cell *matCellDef="let product">{{product.price}}</mat-cell>
-      </ng-container>
 
-    
+    <ng-container matColumnDef="Price">
+      <mat-header-cell *matHeaderCellDef> Price</mat-header-cell>
+      <mat-cell *matCellDef="let product">{{product.price}}</mat-cell>
+    </ng-container>
+
+
   </mat-table>
 </div>

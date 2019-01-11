@@ -1,3 +1,33 @@
-<p>
-  product-detail works!
-</p>
+<h1>Details</h1>
+
+<hr>
+<div *ngIf="product">
+  <div>
+    <label for="">Product ID</label>
+    <span> {{product.productEntityId}}</span>
+  </div>
+  <div>
+    <label for="">ProductName</label>
+    <span> {{product.productName}}</span>
+  </div>
+  <div>
+    <label for="">Description</label>
+    <span> {{product.description}}</span>
+  </div>
+  <div>
+    <label for="">Price</label>
+    <span> {{product.price}}</span>
+  </div>
+  <div>
+    <label for="">Created At</label>
+    <span> {{product.createdUtc | date: 'fullDate'}}</span>
+  </div>
+  <div>
+    <label for="">Modified At</label>
+    <span> {{product.modifiedUtc | date: 'fullDate'}}</span>
+  </div>
+
+</div>
+
+<button mat-button color="accent">Edit</button>
+<button mat-button color="primary" routerLink="/products">Back to List</button>

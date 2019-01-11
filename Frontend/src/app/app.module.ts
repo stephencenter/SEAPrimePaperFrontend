@@ -24,6 +24,7 @@ import { ProductsService } from './services/products.service';
 import { ProductIndexComponent } from './components/product/product-index/product-index.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
+import { ProductEditComponent } from './components/product/product-edit/product-edit.component';
 
 
 const routes =[
@@ -34,7 +35,8 @@ const routes =[
     path: 'products', children: [
     { path: '', component: ProductIndexComponent },
     { path: 'create', component: ProductCreateComponent },
-     { path: 'details/:id', component: ProductDetailComponent }
+     { path: 'details/:id', component: ProductDetailComponent },
+     { path: 'edit/:id', component: ProductEditComponent}
   ]
   }
 ];
@@ -47,7 +49,8 @@ const routes =[
     LoginComponent,
     ProductIndexComponent,
     ProductCreateComponent,
-    ProductDetailComponent
+    ProductDetailComponent,
+    ProductEditComponent
   ],
   imports: [
     BrowserModule,
