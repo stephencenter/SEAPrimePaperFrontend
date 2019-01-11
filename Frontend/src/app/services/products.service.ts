@@ -19,7 +19,11 @@ export class ProductsService {
     return this._http.post(`${ApiUrl}/Product`, product, {headers: this.getHeaders()});
   }
 
+  getProduct(id: string) {
+    return this._http.get(`${ApiUrl}/Product/${id}`, { headers: this.getHeaders() });
+  }
+
   private getHeaders() {
-    return new HttpHeaders().set('Authorization', ` Bearer ${localStorage.getItem('id_token')}`);
+    return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
 }

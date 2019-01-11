@@ -7,6 +7,15 @@
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
     
+    <ng-container matColumnDef="details">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let product" routerLink="/products/details/{{product.productEntityId}}">
+        <i class="material-icons">
+          library_books
+          </i>
+      </mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="ProductName">
       <mat-header-cell *matHeaderCellDef> Product Name</mat-header-cell>
       <mat-cell *matCellDef="let product">{{product.productName}}</mat-cell>

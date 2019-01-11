@@ -9,7 +9,8 @@ import {
   MatToolbarModule,
   MatFormFieldModule,
   MatInputModule,
-  MatTableModule
+  MatTableModule,
+  MatIconModule
 } from '@angular/material';
 
 
@@ -22,6 +23,7 @@ import { AuthService } from './services/auth.service';
 import { ProductsService } from './services/products.service';
 import { ProductIndexComponent } from './components/product/product-index/product-index.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
+import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
 
 
 const routes =[
@@ -32,7 +34,7 @@ const routes =[
     path: 'products', children: [
     { path: '', component: ProductIndexComponent },
     { path: 'create', component: ProductCreateComponent },
-    // { path: 'details', component: ProductDetailsComponent }
+     { path: 'details/:id', component: ProductDetailComponent }
   ]
   }
 ];
@@ -44,7 +46,8 @@ const routes =[
     RegistrationComponent,
     LoginComponent,
     ProductIndexComponent,
-    ProductCreateComponent
+    ProductCreateComponent,
+    ProductDetailComponent
   ],
   imports: [
     BrowserModule,
@@ -57,6 +60,7 @@ const routes =[
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [
     AuthService,
