@@ -12,22 +12,23 @@
 
       <div>
         <mat-form-field>
-          <input matInput placeholder="ProductName" formControlName="ProductName" type="ProductName" required [value]="product.productName" />
+          <input matInput placeholder="ProductName" formControlName="ProductName" type="ProductName" [value]="product.productName" />
         </mat-form-field>
       </div>
 
       <div>
           <mat-form-field>
-            <input matInput placeholder="Description" formControlName="Description" type="Description" required [value]="product.description" />
+            <input matInput placeholder="Description" formControlName="Description" type="Description" [value]="product.description" />
           </mat-form-field>
         </div>
 
         <div>
             <mat-form-field>
-              <input matInput placeholder="Price" formControlName="Price" type="Price" required [value]="product.price" />
+              <input matInput placeholder="Price" formControlName="Price" type="Price" [value]="product.price" />
             </mat-form-field>
           </div>
     </div>
+    <button mat-raised-button class="nav-btn" color="primary" type="submit">Save</button>
   </form>
 </div>
 

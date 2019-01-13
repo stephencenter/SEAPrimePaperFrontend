@@ -23,6 +23,14 @@
       </mat-cell>
     </ng-container>
 
+    <ng-container matColumnDef="delete">
+        <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+        <mat-cell *matCellDef="let product" routerLink="/products/delete/{{product.productEntityId}}">
+          <i class="material-icons">delete</i>
+        </mat-cell>
+      </ng-container>
+    
+
     <ng-container matColumnDef="ProductName">
       <mat-header-cell *matHeaderCellDef> Product Name</mat-header-cell>
       <mat-cell *matCellDef="let product">{{product.productName}}</mat-cell>

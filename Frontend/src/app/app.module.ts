@@ -25,18 +25,20 @@ import { ProductIndexComponent } from './components/product/product-index/produc
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
 import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './components/product/product-edit/product-edit.component';
+import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
 
 
 const routes =[
   {path: 'register', component: RegistrationComponent },
   {path: 'login', component: LoginComponent},
-  {path: 'products', component: ProductIndexComponent },
+  {path: 'products', component: ProductIndexComponent },//why i have 2 of this in my routes
   { 
     path: 'products', children: [
-    { path: '', component: ProductIndexComponent },
+    { path: '', component: ProductIndexComponent },//like here?
     { path: 'create', component: ProductCreateComponent },
      { path: 'details/:id', component: ProductDetailComponent },
-     { path: 'edit/:id', component: ProductEditComponent}
+     { path: 'edit/:id', component: ProductEditComponent},
+     { path: 'delete/:id', component: ProductDeleteComponent}
   ]
   }
 ];
@@ -50,7 +52,8 @@ const routes =[
     ProductIndexComponent,
     ProductCreateComponent,
     ProductDetailComponent,
-    ProductEditComponent
+    ProductEditComponent,
+    ProductDeleteComponent
   ],
   imports: [
     BrowserModule,

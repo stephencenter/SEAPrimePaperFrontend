@@ -15,12 +15,12 @@ export class ProductEditComponent implements OnInit {
 
   editProductForm: FormGroup;
   constructor(private _form: FormBuilder,
-              private _ProductService: ProductsService,
+              private _productService: ProductsService,
               private _ar: ActivatedRoute,
               private _router: Router) { 
 
         this._ar.paramMap.subscribe(p => {
-          this._ProductService.getProduct(p.get('id')).subscribe((singleProduct: Product) => {
+          this._productService.getProduct(p.get('id')).subscribe((singleProduct: Product) => {
             this.product = singleProduct;
             this.createForm();
           })
@@ -36,7 +36,7 @@ export class ProductEditComponent implements OnInit {
       Description: new FormControl(this.product.Description),
       Price: new FormControl(this.product.Price)
 
-    });
+    })
   }
 
   onSubmit(form) {
@@ -45,9 +45,9 @@ export class ProductEditComponent implements OnInit {
       ProductName: form.value.ProductName,
       Description: form.value.Description,
       Price: form.value.Price
-    };
-    this._ProductService.updateProduct(updateProduct).subscribe(d => {
-      this._router.navigate(['/product']);
-    });
+    }
+    this._productService.updateProduct(updateProduct).subscribe(d => {
+      this._router.navigate(['/products']);
+    })
   }
 }
