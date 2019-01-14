@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { ContactprofileService } from 'src/app/services/contactprofile.service';
+import { ContactService } from 'src/app/services/contact.service';
 import { ContactProfile } from 'src/app/models/ContactProfile';
+import { MatTableDataSource } from '@angular/material';
 
 
 @Component({
@@ -9,11 +10,14 @@ import { ContactProfile } from 'src/app/models/ContactProfile';
   styleUrls: ['./contactprofile-index.component.css']
 })
 export class ContactprofileIndexComponent implements OnInit {
-  columnNames = ['FirstName', 'LastName', 'Title', 'IsStarred', 'CreatedUtc', 'buttons'];
-  constructor(private _contactProfileServices: ContactprofileService) { }
+  columnNames = ['ContactName', 'details'];
+  dataSource: MatTableDataSource<ContactProfile>
+
+  constructor(private _contactProfileServices: ContactService) { }
 
   ngOnInit() {
     this._contactProfileServices.getContactProfile().subscribe((contactProfile: ContactProfile[]) => {
+      this.dataSource = new MatTableDataSource<ContactProfile>(contactProfile);
     });
   }
 

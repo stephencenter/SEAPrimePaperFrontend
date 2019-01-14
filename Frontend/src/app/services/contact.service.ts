@@ -5,7 +5,7 @@ const ApiUrl = 'https://localhost:44311/api'
 @Injectable({
   providedIn: 'root'
 })
-export class ContactprofileService {
+export class ContactService {
 
   constructor(private _http: HttpClient) { }
 

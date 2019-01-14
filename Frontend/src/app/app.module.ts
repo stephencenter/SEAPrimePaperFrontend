@@ -26,7 +26,7 @@ import { ProductCreateComponent } from './components/product/product-create/prod
 import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
 import { ProductEditComponent } from './components/product/product-edit/product-edit.component';
 import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
-import { ContactprofileService } from './services/contactprofile.service';
+import { ContactService } from './services/contact.service';
 import { ContactprofileIndexComponent } from './components/contactprofile/contactprofile-index/contactprofile-index.component';
 
 
@@ -34,7 +34,7 @@ const routes =[
   {path: 'register', component: RegistrationComponent },
   {path: 'login', component: LoginComponent},
   {path: 'products', component: ProductIndexComponent },//why i have 2 of this in my routes
-  {path: 'contactProfile', component: ContactprofileIndexComponent},
+  {path: 'contact', component: ContactprofileIndexComponent},
   { 
     path: 'products', children: [
     { path: '', component: ProductIndexComponent },//like here?
@@ -75,7 +75,7 @@ const routes =[
   providers: [
     AuthService,
     ProductsService,
-    ContactprofileService
+    ContactService
   ],
   bootstrap: [AppComponent]
 })
