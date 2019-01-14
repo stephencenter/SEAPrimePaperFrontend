@@ -9,7 +9,8 @@ import {
   MatToolbarModule,
   MatFormFieldModule,
   MatInputModule,
-  MatTableModule
+  MatTableModule,
+  MatIconModule
 } from '@angular/material';
 
 
@@ -22,17 +23,25 @@ import { AuthService } from './services/auth.service';
 import { ProductsService } from './services/products.service';
 import { ProductIndexComponent } from './components/product/product-index/product-index.component';
 import { ProductCreateComponent } from './components/product/product-create/product-create.component';
+import { ProductDetailComponent } from './components/product/product-detail/product-detail.component';
+import { ProductEditComponent } from './components/product/product-edit/product-edit.component';
+import { ProductDeleteComponent } from './components/product/product-delete/product-delete.component';
+import { ContactprofileService } from './services/contactprofile.service';
+import { ContactprofileIndexComponent } from './components/contactprofile/contactprofile-index/contactprofile-index.component';
 
 
 const routes =[
   {path: 'register', component: RegistrationComponent },
   {path: 'login', component: LoginComponent},
-  {path: 'products', component: ProductIndexComponent },
+  {path: 'products', component: ProductIndexComponent },//why i have 2 of this in my routes
+  {path: 'contactProfile', component: ContactprofileIndexComponent},
   { 
     path: 'products', children: [
-    { path: '', component: ProductIndexComponent },
+    { path: '', component: ProductIndexComponent },//like here?
     { path: 'create', component: ProductCreateComponent },
-    // { path: 'details', component: ProductDetailsComponent }
+     { path: 'details/:id', component: ProductDetailComponent },
+     { path: 'edit/:id', component: ProductEditComponent},
+     { path: 'delete/:id', component: ProductDeleteComponent}
   ]
   }
 ];
@@ -44,7 +53,11 @@ const routes =[
     RegistrationComponent,
     LoginComponent,
     ProductIndexComponent,
-    ProductCreateComponent
+    ProductCreateComponent,
+    ProductDetailComponent,
+    ProductEditComponent,
+    ProductDeleteComponent,
+    ContactprofileIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -57,10 +70,12 @@ const routes =[
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
+    MatIconModule
   ],
   providers: [
     AuthService,
-    ProductsService
+    ProductsService,
+    ContactprofileService
   ],
   bootstrap: [AppComponent]
 })
