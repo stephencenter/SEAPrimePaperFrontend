@@ -31,20 +31,20 @@ export class ProductEditComponent implements OnInit {
   }
   createForm(){
     this.editProductForm = this._form.group({
-      ProductEntityId: new FormControl(this.product.ProductEntityId),
-      ProductName: new FormControl(this.product.ProductName),
-      Description: new FormControl(this.product.Description),
-      Price: new FormControl(this.product.Price)
+      ProductEntityId: new FormControl(this.product.productEntityId),
+      ProductName: new FormControl(this.product.productName),
+      Description: new FormControl(this.product.description),
+      Price: new FormControl(this.product.price)
 
     })
   }
 
   onSubmit(form) {
     const updateProduct: Product = {
-      ProductEntityId: form.value.ProductEntityId,
-      ProductName: form.value.ProductName,
-      Description: form.value.Description,
-      Price: form.value.Price
+      productEntityId: form.value.ProductEntityId,
+      productName: form.value.ProductName,
+      description: form.value.Description,
+      price: form.value.Price
     }
     this._productService.updateProduct(updateProduct).subscribe(d => {
       this._router.navigate(['/products']);
