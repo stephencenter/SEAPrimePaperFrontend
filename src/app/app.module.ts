@@ -31,12 +31,15 @@ import { ContactProfileIndexComponent } from './components/contactprofile/contac
 import { CreateContactComponent } from './components/contactprofile/create-contact/create-contact.component';
 import { CartService } from './services/cart.service';
 import { CartIndexComponent } from './components/cart/cart-index/cart-index.component';
+import { AboutService } from './services/about.service';
+import { AboutIndexComponent } from './components/about/about-index/about-index.component';
 
 
 const routes =[
   {path: 'register', component: RegistrationComponent },
   {path: 'login', component: LoginComponent},
   {path: 'contactInfo', component: CreateContactComponent },
+  {path: 'about', component: AboutIndexComponent },
   {path: 'products', component: ProductIndexComponent },//why i have 2 of this in my routes
   {path: 'contactProfile', component: ContactProfileIndexComponent},
   {path: 'cart', component: CartIndexComponent },
@@ -64,7 +67,8 @@ const routes =[
     ProductDeleteComponent,
     ContactProfileIndexComponent,
     CreateContactComponent,
-    CartIndexComponent
+    CartIndexComponent,
+    AboutIndexComponent
   ],
   imports: [
     BrowserModule,
@@ -83,7 +87,8 @@ const routes =[
     AuthService,
     ProductsService,
     ContactProfileService,
-    CartService
+    CartService,
+    AboutService
   ],
   bootstrap: [AppComponent]
 })
