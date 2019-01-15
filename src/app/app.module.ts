@@ -39,6 +39,7 @@ const routes =[
   {path: 'contactInfo', component: CreateContactComponent },
   {path: 'products', component: ProductIndexComponent },//why i have 2 of this in my routes
   {path: 'contactProfile', component: ContactProfileIndexComponent},
+  {path: 'cart', component: CartIndexComponent },
   {path: 'products', children: 
     [
       { path: '', component: ProductIndexComponent },//like here?
@@ -48,7 +49,6 @@ const routes =[
       { path: 'delete/:id', component: ProductDeleteComponent}
     ]
   },
-  {path: 'cartIndex', component: CartIndexComponent }
 ];
 
 @NgModule({
