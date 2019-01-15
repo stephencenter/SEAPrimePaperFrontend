@@ -26,7 +26,6 @@ export class AuthService {
     return this._http.post(`${Api_Url}/Login`, loginInfo).subscribe( (token: any) =>{
       localStorage.setItem('id_token', token.token);
       this.isLoggedIn.next(true);
-      this._router.navigate(['/'])
     });
   }
   currentUser(): Observable<Object> {
