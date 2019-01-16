@@ -29,11 +29,15 @@ import { ProductDeleteComponent } from './components/product/product-delete/prod
 import { ContactProfileService } from './services/contactprofile.service';
 import { ContactProfileIndexComponent } from './components/contactprofile/contactprofile-index/contactprofile-index.component';
 import { CreateContactComponent } from './components/contactprofile/create-contact/create-contact.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { ContactUsComponent } from './components/contact-us/contact-us.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 const routes =[
   {path: 'register', component: RegistrationComponent },
   {path: 'login', component: LoginComponent},
+  {path: '', component: HomeComponent},
   {path: 'contactInfo', component: CreateContactComponent },
   {path: 'products', component: ProductIndexComponent },//why i have 2 of this in my routes
   {path: 'contactProfile', component: ContactProfileIndexComponent},
@@ -60,7 +64,10 @@ const routes =[
     ProductEditComponent,
     ProductDeleteComponent,
     ContactProfileIndexComponent,
-    CreateContactComponent
+    CreateContactComponent,
+    FooterComponent,
+    ContactUsComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
