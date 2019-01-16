@@ -71,6 +71,8 @@ const routes =[
     ProductDeleteComponent,
     ContactProfileIndexComponent,
     CreateContactComponent,
+    CartIndexComponent,
+    AboutIndexComponent,
     FooterComponent,
     ContactUsComponent,
     HomeComponent
