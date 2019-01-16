@@ -14,12 +14,12 @@ export class LoginComponent implements OnInit {
   constructor(private _form: FormBuilder, private authService: AuthService) {
     this.createForm();
 
-   }
+  }
 
   ngOnInit() {
   }
 
-  createForm(){
+  createForm() {
     this._loginForm = this._form.group({
       userName: new FormControl,
       password: new FormControl,
