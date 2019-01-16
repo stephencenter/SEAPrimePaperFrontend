@@ -1,0 +1,20 @@
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: none;
+    
+}
+
+#littleLogo {
+    width: 3%;
+    height: 3%;
+}
+
+a {
+    color: #41883F;
+}
+p, a span {
+    color: #002080;
+}

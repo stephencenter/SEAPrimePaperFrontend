@@ -1,0 +1,18 @@
+#bigLogoText{
+    background: none;
+    font-family: 'Contrail One', cursive;
+    font-size: 625%;
+    color: #002080;
+    padding-top: 25px
+
+}
+#mainLogo{
+    padding-bottom: 27px;
+    height: 17%;
+    width: 17%;
+}
+
+.container{
+    width: 60%;
+    height: 60%;
+}
