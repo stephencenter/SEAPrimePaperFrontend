@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { CartItem } from '../models/CartItem';
+
 
 const ApiUrl = 'https://localhost:44311/api'
 
@@ -10,6 +12,10 @@ const ApiUrl = 'https://localhost:44311/api'
 export class CartService {
 
   constructor(private _http: HttpClient) { }
+
+  addCart(cartItem: CartItem){
+    return this._http.post(`${ApiUrl}/Cart`, cartItem, {headers: this.getHeaders()})
+  }
 
   getCart() {
     return this._http.get(`${ApiUrl}/Cart`, { headers: this.getHeaders() });
