@@ -29,6 +29,10 @@ import { ProductDeleteComponent } from './components/product/product-delete/prod
 import { ContactProfileService } from './services/contactprofile.service';
 import { ContactProfileIndexComponent } from './components/contactprofile/contactprofile-index/contactprofile-index.component';
 import { CreateContactComponent } from './components/contactprofile/create-contact/create-contact.component';
+import { CartService } from './services/cart.service';
+import { CartIndexComponent } from './components/cart/cart-index/cart-index.component';
+import { AboutService } from './services/about.service';
+import { AboutIndexComponent } from './components/about/about-index/about-index.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { HomeComponent } from './components/home/home.component';
@@ -39,17 +43,19 @@ const routes =[
   {path: 'login', component: LoginComponent},
   {path: '', component: HomeComponent},
   {path: 'contactInfo', component: CreateContactComponent },
+  {path: 'about', component: AboutIndexComponent },
   {path: 'products', component: ProductIndexComponent },//why i have 2 of this in my routes
   {path: 'contactProfile', component: ContactProfileIndexComponent},
-  { 
-    path: 'products', children: [
-    { path: '', component: ProductIndexComponent },//like here?
-    { path: 'create', component: ProductCreateComponent },
-     { path: 'details/:id', component: ProductDetailComponent },
-     { path: 'edit/:id', component: ProductEditComponent},
-     { path: 'delete/:id', component: ProductDeleteComponent}
-  ]
-  }
+  {path: 'cart', component: CartIndexComponent },
+  {path: 'products', children: 
+    [
+      { path: '', component: ProductIndexComponent },//like here?
+      { path: 'create', component: ProductCreateComponent },
+      { path: 'details/:id', component: ProductDetailComponent },
+      { path: 'edit/:id', component: ProductEditComponent},
+      { path: 'delete/:id', component: ProductDeleteComponent}
+    ]
+  },
 ];
 
 @NgModule({
@@ -85,7 +91,9 @@ const routes =[
   providers: [
     AuthService,
     ProductsService,
-    ContactProfileService
+    ContactProfileService,
+    CartService,
+    AboutService
   ],
   bootstrap: [AppComponent]
 })
