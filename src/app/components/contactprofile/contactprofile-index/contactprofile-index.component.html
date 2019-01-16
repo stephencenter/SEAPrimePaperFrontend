@@ -1,3 +1,14 @@
-<p>
-  contactprofile-index works!
-</p>
+<h1>Hello Mr.</h1>
+<div>
+  <label hidden for="">First Name</label>
+  <span>{{contact.lastName}}</span>
+</div>
+
+<ng-container matColumnDef="details">
+  <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+  <mat-cell *matCellDef="let contact" routerLink="/contact/details/{{contact.contactEntityId}}">
+    <i class="material-icons">
+      library_books
+    </i>
+  </mat-cell>
+</ng-container>
