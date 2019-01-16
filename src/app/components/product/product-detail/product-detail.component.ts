@@ -4,7 +4,6 @@ import { Product } from 'src/app/models/Product';
 import { ProductsService } from 'src/app/services/products.service';
 import { CartItem } from 'src/app/models/CartItem';
 import { CartService } from 'src/app/services/cart.service';
-import { identifierModuleUrl } from '@angular/compiler';
 
 @Component({
   selector: 'app-product-detail',
