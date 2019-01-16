@@ -45,7 +45,7 @@ const routes =[
   {path: 'contactInfo', component: CreateContactComponent },
   {path: 'about', component: AboutIndexComponent },
   {path: 'products', component: ProductIndexComponent },//why i have 2 of this in my routes
-  {path: 'contactProfile', component: ContactProfileIndexComponent},
+  {path: 'contact', component: ContactProfileIndexComponent},
   {path: 'cart', component: CartIndexComponent },
   {path: 'products', children: 
     [

@@ -1,14 +1,27 @@
-<h1>Hello Mr.</h1>
-<div>
-  <label hidden for="">First Name</label>
-  <span>{{contact.lastName}}</span>
-</div>
+<h1>Hello</h1>
 
-<ng-container matColumnDef="details">
-  <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-  <mat-cell *matCellDef="let contact" routerLink="/contact/details/{{contact.contactEntityId}}">
-    <i class="material-icons">
-      library_books
-    </i>
-  </mat-cell>
-</ng-container>
+<div>
+  <mat-table #table [dataSource]="dataSource">
+    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+
+    <ng-container matColumnDef="LastName">
+      <mat-header-cell *matHeaderCellDef> Product Name</mat-header-cell>
+      <mat-cell *matCellDef="let product">{{contact.LastName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Detail">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let contactProfile" routerLink="/contactProfile/{{contact.contactEntityId}}">
+        <i class="material-icons">
+          Detail
+        </i>
+      </mat-cell>
+    </ng-container>
+
+
+
+
+  </mat-table>
+</div>

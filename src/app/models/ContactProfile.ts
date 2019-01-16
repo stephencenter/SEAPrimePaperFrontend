@@ -9,6 +9,4 @@ export interface ContactProfile {
     city: string;
     state: string;
     zip: number;
-    dateCreated: number;
-    dateModified: number;
 }
