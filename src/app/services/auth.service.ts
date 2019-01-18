@@ -12,7 +12,7 @@ const Api_Url = 'https://localhost:44311/api/Auth';
 })
 export class AuthService {
 
-  userInfo: Token;
+  userInfo = new Subject<{}>();
   isLoggedIn = new Subject<boolean>();
 
   constructor(private _http: HttpClient, private _router: Router) { }
@@ -37,10 +37,11 @@ export class AuthService {
   logout() {
     localStorage.clear();
     this.isLoggedIn.next(false);
-
     this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() } );
     this._router.navigate(['/login']);
+    return this._http.post('{Api_Url}/logout', {headers: this.setHeader( )});
   }
+  
 
   private setHeader(): HttpHeaders {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);

@@ -7,7 +7,7 @@
   <span class="example-fill-remaining-space"></span>
   <button class="btn-1" routerLink="/about">
     <div class="eff"></div>
-    <span>About</span>
+    <span >About</span>
   </button>
   &nbsp;
   <button class="btn-alt" routerLink="/products">
@@ -20,9 +20,17 @@
     <span>Cart</span>
   </button>
   &nbsp;
+  <div *ngIf="authed; else auth ">
+    <button class="btn-alt" (click)="onLogout()" routerLink="/">
+      <div class="eff-alt"></div>
+      <span>Logout</span>
+    </button>
+  </div>
+  <ng-template #auth>
   <button class="btn-alt" routerLink="/register">
     <div class="eff-alt"></div>
     <span>Login/Register</span>
   </button>
+</ng-template>
 
 </mat-toolbar>

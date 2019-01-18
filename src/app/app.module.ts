@@ -5,6 +5,7 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
 
+
 import { 
   MatToolbarModule,
   MatFormFieldModule,
@@ -44,6 +45,7 @@ const routes =[
   {path: '', component: HomeComponent},
   {path: 'contactInfo', component: CreateContactComponent },
   {path: 'about', component: AboutIndexComponent },
+  {path: 'contactUs', component: ContactUsComponent },
   {path: 'products', component: ProductIndexComponent },//why i have 2 of this in my routes
   {path: 'contact', component: ContactProfileIndexComponent},
   {path: 'cart', component: CartIndexComponent },
@@ -57,6 +59,10 @@ const routes =[
     ]
   },
 ];
+
+export function tokenGetter() {
+  return localStorage.getItem('id_token');
+}
 
 @NgModule({
   declarations: [
@@ -88,14 +94,14 @@ const routes =[
     MatTableModule,
     FormsModule,
     ReactiveFormsModule,
-    MatIconModule
-  ],
+    MatIconModule,
+     ],
   providers: [
     AuthService,
     ProductsService,
     ContactProfileService,
     CartService,
-    AboutService
+    AboutService,
   ],
   bootstrap: [AppComponent]
 })
