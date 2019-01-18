@@ -36,6 +36,8 @@ export class RegistrationComponent implements OnInit {
         this._authService.login(this._registerForm.value)
         this._router.navigate(["/contactInfo"])
       });
+      window.location.reload();
+
   }
 
 }
