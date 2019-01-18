@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ContactProfileService } from 'src/app/services/contactprofile.service';
 import { ContactProfile } from 'src/app/models/ContactProfile';
 import { MatTableDataSource } from '@angular/material';
-import { JwtHelperService } from '@auth0/angular-jwt';
+
 
 
 @Component({
@@ -17,11 +17,10 @@ export class ContactProfileIndexComponent implements OnInit {
   token: any
   decodedToken: any
 
-  constructor(private _contactProfileServices: ContactProfileService, private _jwtHelper : JwtHelperService) { }
+  constructor(private _contactProfileServices: ContactProfileService) { }
 
   ngOnInit() {
     this.token=localStorage.getItem('id_token')
-    this.decodedToken=this._jwtHelper.decodeToken(this.token)
     this.userId=this.decodedToken.nameid
     this._contactProfileServices.getContactProfile(this.userId).subscribe((contactProfile: ContactProfile[]) => {
       this.dataSource = new MatTableDataSource<ContactProfile>(contactProfile);
