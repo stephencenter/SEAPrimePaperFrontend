@@ -7,17 +7,17 @@
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
 
     <ng-container matColumnDef="ProductName">
-        <mat-header-cell *matHeaderCellDef> Product Name</mat-header-cell>
+        <mat-header-cell *matHeaderCellDef > Product Name</mat-header-cell>
         <mat-cell *matCellDef="let cartItem">{{cartItem.productName}}</mat-cell>
       </ng-container>
 
       <ng-container matColumnDef="Price">
-          <mat-header-cell *matHeaderCellDef> Product Name</mat-header-cell>
+          <mat-header-cell *matHeaderCellDef> Price</mat-header-cell>
           <mat-cell *matCellDef="let cartItem">${{cartItem.price}}</mat-cell>
         </ng-container>
 
     <ng-container matColumnDef="Quantity">
-      <mat-header-cell *matHeaderCellDef> Quantity</mat-header-cell>
+      <mat-header-cell *matHeaderCellDef > Quantity</mat-header-cell>
       <mat-cell *matCellDef="let cartItem">{{cartItem.quantity}}</mat-cell>
     </ng-container>
 
