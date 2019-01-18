@@ -5,6 +5,16 @@
   <mat-table #table [dataSource]="dataSource">
     <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
     <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+
+    <ng-container matColumnDef="Product">
+      <mat-header-cell *matHeaderCellDef> Product</mat-header-cell>
+      <mat-cell *matCellDef="let cartItem">{{cartItem.productName}}</mat-cell>
+    </ng-container>
+
+    <ng-container matColumnDef="Description">
+      <mat-header-cell *matHeaderCellDef> Description</mat-header-cell>
+      <mat-cell *matCellDef="let cartItem">{{cartItem.description}}</mat-cell>
+    </ng-container>
     
     <ng-container matColumnDef="Quantity">
       <mat-header-cell *matHeaderCellDef> Quantity</mat-header-cell>

@@ -54,6 +54,7 @@ import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../../services/cart.service';
 import { CartIndex } from 'src/app/models/CartIndex';
 import { MatTableDataSource } from '@angular/material';
+import { JwtHelperService } from '@auth0/angular-jwt';
 
 @Component({
   selector: 'app-cart-index',
@@ -62,8 +63,9 @@ import { MatTableDataSource } from '@angular/material';
 })
 
 export class CartIndexComponent implements OnInit {
-  columnNames = ['Quantity']
+  columnNames = ['Product', 'Description', 'Quantity']
   dataSource: MatTableDataSource<CartIndex>
+
 
   constructor(private _cartService: CartService) { }
 
