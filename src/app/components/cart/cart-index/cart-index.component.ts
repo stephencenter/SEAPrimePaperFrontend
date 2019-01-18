@@ -1,8 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../../../services/cart.service';
-import { CartItem } from '../../../models/CartItem';
 import { MatTableDataSource } from '@angular/material';
-import { JwtHelperService } from '@auth0/angular-jwt';
 import { ProductsService } from 'src/app/services/products.service';
 import { Product } from 'src/app/models/Product';
 import { CartIndex } from 'src/app/models/CartIndex';

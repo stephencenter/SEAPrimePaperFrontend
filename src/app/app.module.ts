@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 
 import { HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { JwtHelperService, JwtModule} from '@auth0/angular-jwt'
+
 
 import { 
   MatToolbarModule,
@@ -95,19 +95,13 @@ export function tokenGetter() {
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
-    JwtModule.forRoot({
-      config: {
-        tokenGetter: tokenGetter
-      }
-    })
-  ],
+     ],
   providers: [
     AuthService,
     ProductsService,
     ContactProfileService,
     CartService,
     AboutService,
-    JwtHelperService
   ],
   bootstrap: [AppComponent]
 })
