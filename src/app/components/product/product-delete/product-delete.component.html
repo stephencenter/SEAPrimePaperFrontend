@@ -3,32 +3,32 @@
 
 <hr>
 <div *ngIf="product">
-    <div>
+    <div hidden>
       <label for="">Product ID</label>
       <span> {{product.productEntityId}}</span>
     </div>
     <div>
-      <label for="">ProductName</label>
+      <label  for="">ProductName</label>
       <span> {{product.productName}}</span>
     </div>
     <div>
-      <label for="">Description</label>
+      <label  for="">Description</label>
       <span> {{product.description}}</span>
     </div>
     <div>
       <label for="">Price</label>
       <span> {{product.price}}</span>
     </div>
-    <div>
+    <div hidden>
       <label for="">CreatedUTC</label>
       <span> {{product.createdUtc}}</span>
     </div>
-    <div>
+    <div hidden>
       <label for="">ModifiedUTC</label>
       <span> {{product.modifiedUtc}}</span>
     </div>
   
   </div>
   
-  <button mat-button color="warn" (click)="onDelete()">Delete</button>
-  <button mat-button color="primary" routerLink="/products">Back to List</button>
+  <button  mat-button color="warn" (click)="onDelete()">Delete</button>
+  <button  mat-button color="primary" routerLink="/products">Back to List</button>
