@@ -21,12 +21,27 @@
       <mat-cell *matCellDef="let cartItem">{{cartItem.quantity}}</mat-cell>
     </ng-container>   
 
+    <ng-container matColumnDef="Decrement">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let cartItem" (click)="onEdit(cartItem.cartEntityId, cartItem.quantity - 1)">
+        <button class="btn btn-primary"><i class="material-icons">remove</i></button>
+      </mat-cell>
+    </ng-container>
+    
+    <ng-container matColumnDef="Increment">
+      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
+      <mat-cell *matCellDef="let cartItem" (click)="onEdit(cartItem.cartEntityId, cartItem.quantity + 1)">
+        <button class="btn btn-primary"><i class="material-icons">add</i></button>
+      </mat-cell>
+    </ng-container>
+
     <ng-container matColumnDef="Delete">
       <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
       <mat-cell *matCellDef="let cartItem" (click)="onDelete(cartItem.cartEntityId)">
-        <i class="material-icons">delete</i>
+        <button class="btn btn-danger"><i class="material-icons">delete</i></button>
       </mat-cell>
     </ng-container>
+
   </mat-table>
 </div>
 

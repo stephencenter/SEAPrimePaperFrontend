@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CartItem } from '../models/CartItem';
+import { CartEdit } from '../models/CartEdit';
 
 const ApiUrl = 'https://primepaper.azurewebsites.net/api'
 
@@ -21,10 +22,13 @@ export class CartService {
   }
 
   deleteCart(cart_id: number){
-    console.log(cart_id);
-    let foo = this._http.delete(`${ApiUrl}/Cart/${cart_id}`, { headers: this.getHeaders() });
-    console.log(foo);
-    return foo;
+    console.log(cart_id);  // TO-DO: doesn't work!!!
+    return this._http.delete(`${ApiUrl}/Cart/${cart_id}`, { headers: this.getHeaders() });
+  }
+
+  editQuantity(cartEditItem: CartEdit) {
+    console.log(cartEditItem);  // TO-DO: doesn't work!!!
+    return this._http.put(`${ApiUrl}/Cart`, cartEditItem, { headers: this.getHeaders() });
   }
 
   private getHeaders() {
