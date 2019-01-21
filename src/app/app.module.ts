@@ -37,6 +37,7 @@ import { AboutIndexComponent } from './components/about/about-index/about-index.
 import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { HomeComponent } from './components/home/home.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
 
 const routes =[
@@ -95,13 +96,18 @@ export function tokenGetter() {
     FormsModule,
     ReactiveFormsModule,
     MatIconModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: tokenGetter
+      }
+    })
      ],
   providers: [
     AuthService,
     ProductsService,
     ContactProfileService,
     CartService,
-    AboutService,
+    AboutService
   ],
   bootstrap: [AppComponent]
 })
