@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { RegisterUser } from '../models/RegisterUser';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Token } from '../models/Token';
+import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
@@ -15,7 +16,7 @@ export class AuthService {
   userInfo = new Subject<{}>();
   isLoggedIn = new Subject<boolean>();
 
-  constructor(private _http: HttpClient, private _router: Router) { }
+  constructor(private _http: HttpClient, private _router: Router, private _jwtHelper: JwtHelperService) { }
 
   register(regUserData: RegisterUser){
     return this._http.post(`${Api_Url}/Register`, regUserData);
@@ -28,10 +29,11 @@ export class AuthService {
       this.isLoggedIn.next(true);
     });
   }
-  currentUser(): Observable<Object> {
-    if (!localStorage.getItem('id_token')) { return new Observable(observer => observer.next(false)); }
-
-    return this._http.get(`${Api_Url}/api/Account/UserInfo`, { headers: this.setHeader() });
+  currentUser(): string {
+    if (localStorage.getItem('id_token'))
+    {
+      return this._jwtHelper.decodeToken(localStorage.getItem('id_token')).nameid
+    }
   }
 
   logout() {
