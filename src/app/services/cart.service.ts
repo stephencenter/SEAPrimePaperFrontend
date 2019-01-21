@@ -2,7 +2,6 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CartItem } from '../models/CartItem';
 
-
 const ApiUrl = 'https://localhost:44311/api'
 
 @Injectable({
@@ -21,6 +20,10 @@ export class CartService {
     return this._http.get(`${ApiUrl}/Cart`, { headers: this.getHeaders() });
   }
 
+  deleteCart(cart_id: number){
+    console.log(cart_id)
+    return this._http.delete(`${ApiUrl}/Cart/${cart_id}`, { headers: this.getHeaders() });
+  }
 
   private getHeaders() {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);

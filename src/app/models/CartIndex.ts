@@ -4,5 +4,6 @@ export interface CartIndex {
     quantity?: number,
     description?: string,
     price?: number,
-    productName?: string
+    productName?: string,
+    subtotal?: number
 }

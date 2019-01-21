@@ -16,7 +16,9 @@ export class ProductDeleteComponent implements OnInit {
     }); 
    });
   } 
+
   ngOnInit() {
+
   }
 
   onDelete(){
