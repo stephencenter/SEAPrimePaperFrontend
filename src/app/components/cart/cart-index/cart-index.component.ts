@@ -11,13 +11,15 @@ import { CartIndex } from 'src/app/models/CartIndex';
 })
 
 export class CartIndexComponent implements OnInit {
-  columnNames = ['ProductName', 'Price','Quantity', 'Subtotal', 'Delete']
+  columnNames = ['ProductName', 'Price','Quantity', 'Delete']
   dataSource: MatTableDataSource<CartIndex>
+  subtotal: number
   
   constructor(private _cartService: CartService, private _productService: ProductsService) { }
 
   ngOnInit() {
     this._cartService.getCart().subscribe((cart: CartIndex[]) => {
+      this.subtotal = cart[0].subtotal;
       this.dataSource = new MatTableDataSource<CartIndex>(cart);
     });
   }
@@ -27,7 +29,3 @@ export class CartIndexComponent implements OnInit {
     this._cartService.deleteCart(cart_id);
   }
 }
-
-
-
-

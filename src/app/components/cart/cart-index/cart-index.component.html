@@ -19,12 +19,7 @@
     <ng-container matColumnDef="Quantity">
       <mat-header-cell *matHeaderCellDef>Quantity</mat-header-cell>
       <mat-cell *matCellDef="let cartItem">{{cartItem.quantity}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Subtotal">
-        <mat-header-cell *matHeaderCellDef>Subtotal</mat-header-cell>
-        <mat-cell *matCellDef="let cartItem">${{cartItem.subtotal}}</mat-cell>
-      </ng-container>
+    </ng-container>   
 
     <ng-container matColumnDef="Delete">
       <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
@@ -32,6 +27,9 @@
         <i class="material-icons">delete</i>
       </mat-cell>
     </ng-container>
-
   </mat-table>
+</div>
+
+<div *ngIf="subtotal">
+  <div>Subtotal: ${{subtotal}}</div>
 </div>
