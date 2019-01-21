@@ -3,22 +3,23 @@ import { ContactProfileService } from 'src/app/services/contactprofile.service';
 import { ContactProfile } from 'src/app/models/ContactProfile';
 import { MatTableDataSource } from '@angular/material';
 
-
 @Component({
   selector: 'app-contactprofile-index',
   templateUrl: './contactprofile-index.component.html',
   styleUrls: ['./contactprofile-index.component.css']
 })
-export class ContactProfileIndexComponent implements OnInit {
-  columnNames = ['LastName', 'Detail'];
-  dataSource: MatTableDataSource<ContactProfile>
 
-  constructor(private _contactProfileServices: ContactProfileService) { }
+export class ContactProfileIndexComponent implements OnInit {
+    dataSource: ContactProfile;  
+  
+  constructor(private _contactProfileService: ContactProfileService) { }
 
   ngOnInit() {
-    this._contactProfileServices.getContactProfile().subscribe((contactProfile: ContactProfile[]) => {
-      this.dataSource = new MatTableDataSource<ContactProfile>(contactProfile);
+    // console.log("ngOnInit")
+    this._contactProfileService.getContactProfile('1002').subscribe((contact: ContactProfile) => {
+      this.dataSource = contact;
+      console.log(this.dataSource)
+      console.log("Contact", contact);
     });
   }
-
 }

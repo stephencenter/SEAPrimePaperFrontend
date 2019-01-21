@@ -1,27 +1,16 @@
-<h1>Hello</h1>
+<h1>My Account</h1>
+<hr>
 
-<div>
-  <mat-table #table [dataSource]="dataSource">
-    <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-    <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
+<div *ngIf="dataSource">
 
+  <div>First Name = {{dataSource.firstName}}</div>
+  <div>Last Name = {{dataSource.lastName}}</div>
+  <div>Company = {{dataSource.companyName}}</div>
+  <div>Email = {{dataSource.email}}</div>
+  <div>Phone = {{dataSource.phone}}</div>
+  <div>Address = {{dataSource.streetAddress}}</div>
+  <div>City = {{dataSource.city}}</div>
+  <div>State = {{dataSource.state}}</div>
+  <div>Zip = {{dataSource.zip}}</div>
 
-    <ng-container matColumnDef="LastName">
-      <mat-header-cell *matHeaderCellDef> Product Name</mat-header-cell>
-      <mat-cell *matCellDef="let contact">{{contact.lastName}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Detail">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let contactProfile" routerLink="/contactProfile/{{contact.contactEntityId}}">
-        <i class="material-icons">
-          Detail
-        </i>
-      </mat-cell>
-    </ng-container>
-
-
-
-
-  </mat-table>
 </div>
