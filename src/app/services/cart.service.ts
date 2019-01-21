@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CartItem } from '../models/CartItem';
 
-const ApiUrl = 'https://localhost:44311/api'
+const ApiUrl = 'https://primepaper.azurewebsites.net/api'
 
 @Injectable({
   providedIn: 'root'
@@ -21,8 +21,10 @@ export class CartService {
   }
 
   deleteCart(cart_id: number){
-    console.log(cart_id)
-    return this._http.delete(`${ApiUrl}/Cart/${cart_id}`, { headers: this.getHeaders() });
+    console.log(cart_id);
+    let foo = this._http.delete(`${ApiUrl}/Cart/${cart_id}`, { headers: this.getHeaders() });
+    console.log(foo);
+    return foo;
   }
 
   private getHeaders() {

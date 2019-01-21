@@ -25,7 +25,7 @@ export class CartIndexComponent implements OnInit {
   }
 
   onDelete(cart_id: number){
-    console.log("This is working")
+    console.log("This is working");
     this._cartService.deleteCart(cart_id);
   }
 }

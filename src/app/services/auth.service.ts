@@ -6,7 +6,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 
-const Api_Url = 'https://localhost:44311/api/Auth';
+const Api_Url = 'https://primepaper.azurewebsites.net/api/Auth';
 
 @Injectable({
   providedIn: 'root'
