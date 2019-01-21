@@ -1,66 +1,16 @@
-<h1>Personal Information</h1>
+<h1>My Account</h1>
 <hr>
 
-<div>
-    <mat-table #table [dataSource]="dataSource">
-      <mat-header-row *matHeaderRowDef="columnNames"></mat-header-row>
-      <mat-row *matRowDef="let row; columns: columnNames;"></mat-row>
-    
-      <ng-container matColumnDef="FirstName">
-        <mat-header-cell *matHeaderCellDef> First Name</mat-header-cell>
-        <mat-cell *matCellDef="let contactProfile">{{contactProfile.firstName}}</mat-cell>
-    </ng-container>
+<div *ngIf="dataSource">
 
-    <ng-container matColumnDef="LastName">
-      <mat-header-cell *matHeaderCellDef> Product Name</mat-header-cell>
-      <mat-cell *matCellDef="let contact">{{contact.lastName}}</mat-cell>
-    </ng-container>
+  <div>First Name = {{dataSource.firstName}}</div>
+  <div>Last Name = {{dataSource.lastName}}</div>
+  <div>Company = {{dataSource.companyName}}</div>
+  <div>Email = {{dataSource.email}}</div>
+  <div>Phone = {{dataSource.phone}}</div>
+  <div>Address = {{dataSource.streetAddress}}</div>
+  <div>City = {{dataSource.city}}</div>
+  <div>State = {{dataSource.state}}</div>
+  <div>Zip = {{dataSource.zip}}</div>
 
-  </mat-table>
 </div>
-
-
-<!-- 
-    <ng-container matColumnDef="Company">
-      <mat-header-cell *matHeaderCellDef> Company</mat-header-cell>
-      <mat-cell *matCellDef="let contactProfile"> {{contactProfile.companyName}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Email">
-      <mat-header-cell *matHeaderCellDef> Email</mat-header-cell>
-      <mat-cell *matCellDef="let contactProfile"> {{contactProfile.email}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Phone">
-      <mat-header-cell *matHeaderCellDef> Phone Number</mat-header-cell>
-      <mat-cell *matCellDef="let contactProfile"> {{contactProfile.phone}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Address">
-      <mat-header-cell *matHeaderCellDef> Street Address</mat-header-cell>
-      <mat-cell *matCellDef="let contactProfile"> {{contactProfile.streetAddress}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="City">
-      <mat-header-cell *matHeaderCellDef> City</mat-header-cell>
-      <mat-cell *matCellDef="let contactProfile"> {{contactProfile.city}}</mat-cell>
-    </ng-container>
-    
-    <ng-container matColumnDef="State">
-      <mat-header-cell *matHeaderCellDef> State</mat-header-cell>
-      <mat-cell *matCellDef="let contactProfile"> {{contactProfile.state}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Zip">
-      <mat-header-cell *matHeaderCellDef> Postal Zip Code</mat-header-cell>
-      <mat-cell *matCellDef="let contactProfile"> {{contactProfile.zip}}</mat-cell>
-    </ng-container>
-
-    <ng-container matColumnDef="Edit">
-      <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let contactProfile" routerLink="/contactProfile/{{contact.contactEntityId}}">
-        <i class="material-icons">
-          edit
-        </i>
-      </mat-cell>
-    </ng-container> -->
