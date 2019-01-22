@@ -23,15 +23,12 @@ export class ProductDetailComponent implements OnInit {
     })
   }
 
-  addToCart(Id: string){
+  addToCart(Id: number){
     var cartItem: CartItem = {
       productEntityId : Id,
       quantity : 1,
     } 
-    this._cartService.addCart(cartItem).subscribe(data => {
 
-    })
-
+    this._cartService.addCart(cartItem).subscribe(data => { })
   }
-
 }

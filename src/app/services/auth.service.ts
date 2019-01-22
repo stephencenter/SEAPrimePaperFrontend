@@ -19,15 +19,15 @@ export class AuthService {
 
   register(regUserData: RegisterUser){
     return this._http.post(`${APIURL}/Auth/Register`, regUserData);
-
   }
+  
   login(loginInfo){
-
     return this._http.post(`${APIURL}/Auth/Login`, loginInfo).subscribe( (token: any) =>{
       localStorage.setItem('id_token', token.token);
       this.isLoggedIn.next(true);
     });
   }
+  
   currentUser(): string {
     if (localStorage.getItem('id_token'))
     {
@@ -47,5 +47,4 @@ export class AuthService {
   private setHeader(): HttpHeaders {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
-
 }
