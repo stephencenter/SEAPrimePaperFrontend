@@ -1,6 +1,12 @@
+<div class="head">
+  &nbsp;
 <h1>Products</h1>
-<button mat-raised-button color="primary" routerLink="/products/create">Create New Product</button>
+<button class="btn-1" type="submit" routerLink="/products/create">
+  <div class="eff"></div>
+  <span>Create New Product</span>
+</button>
 <hr>
+</div>
 
 <div>
   <mat-table #table [dataSource]="dataSource">
@@ -42,7 +48,7 @@
 
     <ng-container matColumnDef="Price">
       <mat-header-cell *matHeaderCellDef> Price</mat-header-cell>
-      <mat-cell *matCellDef="let product">{{product.price}}</mat-cell>
+      <mat-cell *matCellDef="let product">${{product.price}}</mat-cell>
     </ng-container>
 
 

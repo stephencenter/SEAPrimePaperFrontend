@@ -16,3 +16,17 @@
     width: 60%;
     height: 60%;
 }
+
+.carousel-caption{
+    color: #fff;
+    font-family: 'Raleway', sans-serif;
+    background: rgba(48, 48, 48, 0.65);
+    font-size: 75%;
+    
+    display: inline;
+    padding: 0.5rem;
+  
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+

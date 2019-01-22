@@ -1,16 +1,23 @@
+&nbsp;
 <h1>My Account</h1>
 <hr>
 
 <div *ngIf="dataSource">
 
-  <div>First Name = {{dataSource.firstName}}</div>
-  <div>Last Name = {{dataSource.lastName}}</div>
-  <div>Company = {{dataSource.companyName}}</div>
-  <div>Email = {{dataSource.email}}</div>
-  <div>Phone = {{dataSource.phone}}</div>
-  <div>Address = {{dataSource.streetAddress}}</div>
-  <div>City = {{dataSource.city}}</div>
-  <div>State = {{dataSource.state}}</div>
-  <div>Zip = {{dataSource.zip}}</div>
-
+  <div>First Name:&nbsp; {{dataSource.firstName}}</div>
+  <div>Last Name:&nbsp; {{dataSource.lastName}}</div>
+  <div>Company:&nbsp; {{dataSource.companyName}}</div>
+  <div>Email:&nbsp; {{dataSource.email}}</div>
+  <div>Phone:&nbsp; {{dataSource.phone}}</div>
+  <div>Address:&nbsp; {{dataSource.streetAddress}}</div>
+  <div>City:&nbsp; {{dataSource.city}}</div>
+  <div>State:&nbsp; {{dataSource.state}}</div>
+  <div>Zip:&nbsp; {{dataSource.zip}}</div>
+</div>
+&nbsp;
+<div>
+<button class="btn-1" type="submit" routerLink="/contact/updateInfo/">
+  <div class="eff"></div>
+  <span>Edit Info</span>
+</button>
 </div>
