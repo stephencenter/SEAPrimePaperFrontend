@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class CreateContactComponent implements OnInit {
 
-  private _contactForm: FormGroup;
+  _contactForm: FormGroup;
 
   constructor(private _form: FormBuilder, private _contactProfileService: ContactProfileService, private _router: Router) {
     this.createForm();
