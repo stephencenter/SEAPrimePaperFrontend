@@ -38,6 +38,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ContactUsComponent } from './components/contact-us/contact-us.component';
 import { HomeComponent } from './components/home/home.component';
 import { JwtModule } from '@auth0/angular-jwt';
+import { ContactProfileEditComponent } from './components/contactprofile/contactprofile-edit/contactprofile-edit.component';
 
 
 const routes =[
@@ -58,6 +59,11 @@ const routes =[
       { path: 'edit/:id', component: ProductEditComponent},
       { path: 'delete/:id', component: ProductDeleteComponent}
     ]
+  },
+  {path: 'contact', children: 
+  [
+    {path: 'updateInfo', component: ContactProfileEditComponent}
+  ]
   },
 ];
 
@@ -82,7 +88,8 @@ export function tokenGetter() {
     AboutIndexComponent,
     FooterComponent,
     ContactUsComponent,
-    HomeComponent
+    HomeComponent,
+    ContactProfileEditComponent
   ],
   imports: [
     BrowserModule,
