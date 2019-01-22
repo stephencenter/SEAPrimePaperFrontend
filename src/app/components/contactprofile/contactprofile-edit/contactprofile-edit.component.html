@@ -1,0 +1,64 @@
+<div class="head">
+  &nbsp;
+  <h1>Edit Your Information</h1>
+  <h3></h3>
+</div>
+<hr>
+
+<div *ngIf="dataSource">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f)" [formGroup]="editContactForm">
+      <div>
+        <div hidden>
+          <mat-form-field>
+            <input matInput placeholder="ContactEntityId" formControlName="ContactEntityId" type="ProductEntityId" required [value]="dataSource.contactEntityId" />
+          </mat-form-field>
+        </div>
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="FirstName" formControlName="FirstName" type="FirstName" [value]="dataSource.firstName" />
+          </mat-form-field>
+        &nbsp;
+            <mat-form-field>
+              <input matInput placeholder="LastName" formControlName="LastName" type="LastName" [value]="dataSource.lastName" />
+            </mat-form-field>
+          </div>
+          &nbsp;
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="CompanyName" formControlName="CompanyName" type="CompanyName" [value]="dataSource.companyName" />
+          </mat-form-field>
+        &nbsp;
+          <mat-form-field>
+            <input matInput placeholder="Email" formControlName="Email" type="Email" [value]="dataSource.email" />
+          </mat-form-field>
+          &nbsp;
+          <mat-form-field>
+            <input matInput placeholder="Phone" formControlName="Phone" type="Phone" [value]="dataSource.phone" />
+          </mat-form-field>
+        </div>
+        &nbsp;
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="StreetAddress" formControlName="StreetAddress" type="StreetAddress" [value]="dataSource.streetAddress" />
+          </mat-form-field>
+        &nbsp;
+          <mat-form-field>
+            <input matInput placeholder="City" formControlName="City" type="City" [value]="dataSource.city" />
+          </mat-form-field>
+        &nbsp;
+          <mat-form-field>
+            <input matInput placeholder="State" formControlName="State" type="State" [value]="dataSource.state" />
+          </mat-form-field>
+        </div>
+        &nbsp;
+        <div>
+          <mat-form-field>
+            <input matInput placeholder="Zip" formControlName="Zip" type="Zip" [value]="dataSource.zip" />
+          </mat-form-field>
+        </div>
+      </div>
+      <button class="btn-1" type="submit"><div class="eff"></div><span>Update</span></button>
+      &nbsp;
+      <button class="btn-alt" routerLink="/contact"><div class="eff-alt"></div><span>Back to List</span></button>
+    </form>
+  </div>
