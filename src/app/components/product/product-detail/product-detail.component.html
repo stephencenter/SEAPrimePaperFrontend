@@ -1,22 +1,27 @@
+<div class="head">
+  &nbsp;
 <h1>Details</h1>
-
 <hr>
+</div>
+
 <div *ngIf="product">
   <div hidden>
     <label  for="">Product ID</label>
     <span> {{product.productEntityId}}</span>
   </div>
   <div>
-    <label  for="">ProductName</label>
+    <label  for="">Product:&nbsp;</label>
     <span> {{product.productName}}</span>
   </div>
+  &nbsp;
   <div>
-    <label for="">Description</label>
+    <label for="">Description:&nbsp;</label>
     <span> {{product.description}}</span>
   </div>
+  &nbsp;
   <div>
-    <label for="">Price</label>
-    <span> {{product.price}}</span>
+    <label for="">Price:&nbsp;</label>
+    <span> ${{product.price}}</span>
   </div>
   <div hidden>
     <label for="">Created At</label>
@@ -28,6 +33,9 @@
   </div>
 
 </div>
-
-<button mat-button color="accent" (click)="addToCart(product.productEntityId)">Add to Cart</button>
-<button mat-button color="primary" routerLink="/products">Back to List</button>
+&nbsp;
+<div>
+<button class="btn-1" (click)="addToCart(product.productEntityId)"><div class="eff"></div><span>Add to Cart</span></button>
+&nbsp;
+<button class="btn-alt" routerLink="/products"><div class="eff-alt"></div><span>Back to List</span></button>
+</div>
