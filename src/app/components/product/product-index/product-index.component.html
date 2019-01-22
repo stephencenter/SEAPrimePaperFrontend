@@ -1,11 +1,11 @@
 <div class="head">
   &nbsp;
-<h1>Products</h1>
-<button class="btn-1" type="submit" routerLink="/products/create">
-  <div class="eff"></div>
-  <span>Create New Product</span>
-</button>
-<hr>
+  <h1>Products</h1>
+  <button *ngIf="role == 'Admin'" class="btn-1" type="submit"  routerLink="/products/create">
+    <div class="eff"></div>
+    <span>Create New Product</span>
+  </button>
+  <hr>
 </div>
 
 <div>
@@ -24,15 +24,15 @@
     
     <ng-container matColumnDef="edit">
       <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-      <mat-cell *matCellDef="let product" routerLink="/products/edit/{{product.productEntityId}}">
-        <i class="material-icons">edit</i>
+      <mat-cell *matCellDef="let product" >
+        <i *ngIf="role == 'Admin'" routerLink="/products/edit/{{product.productEntityId}}" class="material-icons">edit</i>
       </mat-cell>
     </ng-container>
 
     <ng-container matColumnDef="delete">
         <mat-header-cell *matHeaderCellDef class="matColumnSize"></mat-header-cell>
-        <mat-cell *matCellDef="let product" routerLink="/products/delete/{{product.productEntityId}}">
-          <i class="material-icons">delete</i>
+        <mat-cell *matCellDef="let product" >
+          <i *ngIf="role == 'Admin'" routerLink="/products/delete/{{product.productEntityId}}" class="material-icons">delete</i>
         </mat-cell>
       </ng-container>
 
@@ -54,3 +54,11 @@
 
   </mat-table>
 </div>
+
+
+  <!-- <mat-card #card [dataSource]="dataSource">
+    <mat-card-title>{{product.productName}}</mat-card-title>
+    <img mat-card-image>
+    <mat-card-subtitle>{{product.description}}</mat-card-subtitle>
+    <mat-card-content>{{product.price}}</mat-card-content>
+  </mat-card> -->
