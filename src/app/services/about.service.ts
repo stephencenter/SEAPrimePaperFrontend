@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-
-const ApiUrl = 'https://primepaper.azurewebsites.net/api'
+import { APIURL } from '../../environments/environment.prod'
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +10,7 @@ export class AboutService {
   constructor(private _http: HttpClient) { }
   
   getAbout() {
-    return this._http.get(`${ApiUrl}/About`, { headers: this.getHeaders() });
+    return this._http.get(`${APIURL}/About`, { headers: this.getHeaders() });
   }
 
   getHeaders(){
