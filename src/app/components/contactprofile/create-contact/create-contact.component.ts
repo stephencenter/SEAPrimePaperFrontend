@@ -34,7 +34,7 @@ export class CreateContactComponent implements OnInit {
 
   onSubmit() {
     this._contactProfileService.createContactInfo(this._contactForm.value).subscribe(data => {
-      this._router.navigate(['/']);
-  })
+      this._router.navigate(['/']); window.location.reload();
+    })
   }
 }
