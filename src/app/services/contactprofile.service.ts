@@ -6,6 +6,7 @@ import { APIURL } from 'src/environments/environment.prod';
 @Injectable({
   providedIn: 'root'
 })
+
 export class ContactProfileService {
 
   constructor(private _http: HttpClient) { }
