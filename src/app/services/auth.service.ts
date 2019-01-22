@@ -6,6 +6,7 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
 import { APIURL } from 'src/environments/environment.prod';
+import { identifierModuleUrl } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -46,5 +47,12 @@ export class AuthService {
 
   private setHeader(): HttpHeaders {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
+  }
+  
+  currentRole(): string {
+    if (localStorage.getItem('id_token')){
+      return this._jwtHelper.decodeToken(localStorage.getItem('id_token')).role
+    }
+    return "string"
   }
 }
