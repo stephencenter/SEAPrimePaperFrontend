@@ -27,7 +27,7 @@ export class CartIndexComponent implements OnInit {
 
   onDelete(cart_id: number){
     console.log("onDelete");
-    this._cartService.deleteCart(cart_id);
+    this._cartService.deleteCart(cart_id).subscribe();
   }
 
   onEdit(cart_id: number, new_quantity: number) {
@@ -38,6 +38,8 @@ export class CartIndexComponent implements OnInit {
       quantity: new_quantity,
     }
 
-    this._cartService.editQuantity(cartEditItem);
+    this._cartService.editQuantity(cartEditItem).subscribe( x => {
+      
+    });
   }
 }
