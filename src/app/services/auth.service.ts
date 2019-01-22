@@ -5,9 +5,7 @@ import { Token } from '../models/Token';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
-import { APIURL } from '../../environments/environment.prod'
-
-
+import { APIURL } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -20,16 +18,16 @@ export class AuthService {
   constructor(private _http: HttpClient, private _router: Router, private _jwtHelper: JwtHelperService) { }
 
   register(regUserData: RegisterUser){
-    return this._http.post(`${APIURL}/Register`, regUserData);
-
+    return this._http.post(`${APIURL}/Auth/Register`, regUserData);
   }
+  
   login(loginInfo){
-
-    return this._http.post(`${APIURL}/Login`, loginInfo).subscribe( (token: any) =>{
+    return this._http.post(`${APIURL}/Auth/Login`, loginInfo).subscribe( (token: any) =>{
       localStorage.setItem('id_token', token.token);
       this.isLoggedIn.next(true);
     });
   }
+  
   currentUser(): string {
     if (localStorage.getItem('id_token'))
     {
@@ -49,5 +47,4 @@ export class AuthService {
   private setHeader(): HttpHeaders {
     return new HttpHeaders().set('Authorization', `Bearer ${localStorage.getItem('id_token')}`);
   }
-
 }

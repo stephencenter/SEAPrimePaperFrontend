@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ContactProfile } from '../models/ContactProfile';
-import { APIURL } from '../../environments/environment.prod'
+import { APIURL } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
 })
+
 export class ContactProfileService {
 
   constructor(private _http: HttpClient) { }

@@ -1,10 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { CartItem } from '../models/CartItem';
+import { APIURL } from 'src/environments/environment.prod';
 import { CartEdit } from '../models/CartEdit';
-import { APIURL } from '../../environments/environment.prod'
-
-
 
 @Injectable({
   providedIn: 'root'
@@ -23,13 +21,12 @@ export class CartService {
   }
 
   deleteCart(cart_id: number){
-    console.log(cart_id);  // TO-DO: doesn't work!!!
+    console.log(cart_id);
     return this._http.delete(`${APIURL}/Cart/${cart_id}`, { headers: this.getHeaders() });
   }
 
   editQuantity(cartEditItem: CartEdit) {
-    console.log(cartEditItem);  // TO-DO: doesn't work!!!
-    console.log(APIURL)
+    console.log(cartEditItem);
     return this._http.put(`${APIURL}/Cart`, cartEditItem, { headers: this.getHeaders() });
   }
 
