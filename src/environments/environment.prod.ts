@@ -1,8 +1,8 @@
 export let APIURL ='';
 
 switch (window.location.hostname) {
-  case 'primepaper.kerokuapp.com':
-    APIURL = 'primepaper.azurewebsites.com'
+  case 'https://primepaper.herokuapp.com/ngng':
+    APIURL = 'https://primepaper.azurewebsites.net/api'
     break;
     
   default: 
