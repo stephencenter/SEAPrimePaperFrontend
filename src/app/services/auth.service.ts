@@ -5,8 +5,7 @@ import { Token } from '../models/Token';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Router } from '@angular/router';
 import { Observable, Subject } from 'rxjs';
-
-const Api_Url = 'https://primepaper.azurewebsites.net/api/Auth';
+import { APIURL } from 'src/environments/environment.prod';
 
 @Injectable({
   providedIn: 'root'
@@ -19,12 +18,12 @@ export class AuthService {
   constructor(private _http: HttpClient, private _router: Router, private _jwtHelper: JwtHelperService) { }
 
   register(regUserData: RegisterUser){
-    return this._http.post(`${Api_Url}/Register`, regUserData);
+    return this._http.post(`${APIURL}/Auth/Register`, regUserData);
 
   }
   login(loginInfo){
 
-    return this._http.post(`${Api_Url}/Login`, loginInfo).subscribe( (token: any) =>{
+    return this._http.post(`${APIURL}/Auth/Login`, loginInfo).subscribe( (token: any) =>{
       localStorage.setItem('id_token', token.token);
       this.isLoggedIn.next(true);
     });
@@ -39,7 +38,7 @@ export class AuthService {
   logout() {
     localStorage.clear();
     this.isLoggedIn.next(false);
-    this._http.post(`${Api_Url}/api/Account/Logout`, { headers: this.setHeader() } );
+    this._http.post(`${APIURL}/api/Account/Logout`, { headers: this.setHeader() } );
     this._router.navigate(['/login']);
     return this._http.post('{Api_Url}/logout', {headers: this.setHeader( )});
   }
