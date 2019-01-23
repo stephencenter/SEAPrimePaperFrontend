@@ -29,6 +29,6 @@ export class ProductDetailComponent implements OnInit {
       quantity : 1,
     } 
 
-    this._cartService.addCart(cartItem).subscribe(data => { })
+    this._cartService.addCart(cartItem).subscribe(data => {window.location.reload() })
   }
 }
