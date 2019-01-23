@@ -39,6 +39,7 @@ import { ContactUsComponent } from './components/contact-us/contact-us.component
 import { HomeComponent } from './components/home/home.component';
 import { JwtModule } from '@auth0/angular-jwt';
 import { ContactProfileEditComponent } from './components/contactprofile/contactprofile-edit/contactprofile-edit.component';
+import { DevByComponent } from './components/dev-by/dev-by.component';
 
 
 const routes =[
@@ -51,6 +52,7 @@ const routes =[
   {path: 'products', component: ProductIndexComponent },//why i have 2 of this in my routes
   {path: 'contact', component: ContactProfileIndexComponent},
   {path: 'cart', component: CartIndexComponent },
+  {path: 'development', component: DevByComponent},
   {path: 'products', children: 
     [
       { path: '', component: ProductIndexComponent },//like here?
@@ -89,7 +91,8 @@ export function tokenGetter() {
     FooterComponent,
     ContactUsComponent,
     HomeComponent,
-    ContactProfileEditComponent
+    ContactProfileEditComponent,
+    DevByComponent
   ],
   imports: [
     BrowserModule,

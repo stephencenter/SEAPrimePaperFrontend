@@ -1,0 +1,16 @@
+.head {
+    font-family: 'Contrail One', cursive;
+    color: #002080;
+}
+
+#cards{
+    width: 50%;
+    margin: 0 auto;
+    float: none;
+    margin-bottom: 10px; 
+}
+
+a {
+    color: #41883F;
+    text-decoration: none;
+}
