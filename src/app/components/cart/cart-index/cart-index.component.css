@@ -3,3 +3,51 @@ h1 {
     color: #002080;
     font-size: 3em;
   }
+  .btn-alt{
+    background-color: transparent;
+    width: 9%;
+    height: 55%;
+    border:2px solid #41883F;
+    text-align:center;
+    cursor:pointer;
+    position:relative;
+    box-sizing:border-box;
+    overflow:hidden;
+    margin:0 0 0 0;
+  }
+  .btn-alt span{
+    font-family: 'Contrail One', cursive;
+    font-size:18px;
+    color:#41883F;
+    text-decoration:none;
+    line-height:40%;
+    transition:all .5s ease;
+    z-index:2;
+    position:relative;
+  }
+  .eff-alt{
+    width:140px;
+    height:50px;
+    right:-140px;
+    bottom:-50px;
+    background:#41883F;
+    position:absolute;
+    transition:all .5s ease;
+    z-index:2;
+  }
+  .btn-alt:hover .eff-alt{
+    right:0;bottom:0;
+  }
+  .btn-alt:hover span{
+    color:#fff;
+  }
+
+  .incogBtn{
+    border: none;
+    background: transparent;
+    color: black;
+    cursor:pointer;
+  }
+  .incogBtn:focus {
+    outline: none;
+  }
